@@ -5,15 +5,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>
-
-      <div className='container text-center containerCentral'>
+    <div className='tudo pt-5 bg-secondary bg-gradient'>
+      <div className='container text-center containerCentral bg-dark bg-gradient d-flex align-items-center justify-content-center'>
         <div className='row'>
-          <div className='col-12'>
-            <h1><i class="fa-solid fa-dungeon fa-10x"></i></h1>
+          <div className='col'>
+            <h1><i class="fa-solid fa-dungeon fa-10x text-light"></i></h1>
           </div>
         </div>
       </div>
-
+    </div>
 
     </>
   )
