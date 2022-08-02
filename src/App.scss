@@ -1,0 +1,27 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+
+
+
+
+*{
+  margin: 0
+}
+
+
+.containerCentral, .container{
+  margin-top: 0;
+  height: 80vh;
+  
+}
+.tudo{
+  width: 100vw;
+  height: 100vh;
+  margin-top: 0;
+}
+.porta{
+  background: rgb(2,0,36);
+  background: linear-gradient(320deg, rgba(2,0,36,1) 4%, rgba(83,72,81,1) 29%, rgba(172,152,131,1) 70%);   background-clip: text;
+  color: transparent;
+}

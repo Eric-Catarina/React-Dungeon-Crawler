@@ -1,17 +1,20 @@
+
 import logo from './logo.svg';
-import './App.css';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react';
+import "./App.scss"
+
 
 function geraIcone(indice) {
   switch (indice) {
-    case '0':
-      return <h1><i class="fa-solid fa-dungeon fa-10x text-light"></i></h1>;
-    case '1':
-      return <h1><i class="fa-solid fa-khanda fa-10x text-light"></i></h1>;
-    case '2':
-      return <h1><i class="fa-solid fa-dragon fa-10x text-light"></i></h1>;
-    case '3':
+    case 0:
+      return <h1><i class="fa-solid fa-dungeon fa-10x porta"></i></h1>;
+    case 1:
+      return <h1><i class="fa-solid fa-khanda fa-10x text-warning"></i></h1>;
+    case 2:
+      return <h1><i class="fa-solid fa-dragon fa-10x text-danger"></i></h1>;
+    case 3:
       return <h1><i class="fa-solid fa-skull-crossbones fa-10x text-light"></i></h1>;
   }
 }
