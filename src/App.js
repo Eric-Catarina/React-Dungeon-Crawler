@@ -11,11 +11,14 @@ function geraIcone(indice) {
     case 0:
       return <h1><i class="fa-solid fa-dungeon fa-10x porta"></i></h1>;
     case 1:
-      return <h1><i class="fa-solid fa-khanda fa-10x text-warning"></i></h1>;
+      return <h1><i class="fa-solid fa-khanda fa-10x arma"></i></h1>;
     case 2:
-      return <h1><i class="fa-solid fa-dragon fa-10x text-danger"></i></h1>;
+      return <h1><i class="fa-solid fa-dragon fa-10x dragao"></i></h1>;
     case 3:
-      return <h1><i class="fa-solid fa-skull-crossbones fa-10x text-light"></i></h1>;
+      return <h1><i class="fa-solid fa-skull-crossbones fa-10x caveira"></i></h1>;
+    case 4:
+      return <h1><i class="fa-solid fa-arrow-rotate-left fa-10x replay"></i></h1>;
+
   }
 }
 
@@ -24,16 +27,15 @@ let iconeAtual = 0
 function IconePrincipal() {
 
   const [contadorDeCliques, setaIndiceIcone] = useState(iconeAtual);
-
+  if (contadorDeCliques == 5 ){
+    setaIndiceIcone(0)
+  }
   return (
     <div>
 
-<a href='#' onClick={() => setaIndiceIcone(contadorDeCliques + 1)}>
-{geraIcone(contadorDeCliques)}
-              </a>
-      
-      Voce clicou {contadorDeCliques} vezes
-
+      <a href='#' onClick={() => setaIndiceIcone(contadorDeCliques + 1)}>
+        {geraIcone(contadorDeCliques)}
+      </a>
     </div>
   );
 }
@@ -46,7 +48,7 @@ function App() {
           <div className='row'>
             <div className='col'>
               {IconePrincipal()}
-             
+
 
             </div>
           </div>

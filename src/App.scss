@@ -1,27 +1,62 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
+$amareloEstranho: #fad648;
 
 
 
 
-*{
+
+
+* {
   margin: 0
 }
 
 
-.containerCentral, .container{
+.containerCentral,
+.container {
   margin-top: 0;
   height: 80vh;
-  
+
 }
-.tudo{
+
+.tudo {
   width: 100vw;
   height: 100vh;
   margin-top: 0;
 }
-.porta{
-  background: rgb(2,0,36);
-  background: linear-gradient(320deg, rgba(2,0,36,1) 4%, rgba(83,72,81,1) 29%, rgba(172,152,131,1) 70%);   background-clip: text;
+
+.porta {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); 
+  background-clip: text;
   color: transparent;
 }
+.arma {
+  background: rgb(63,94,251);
+  background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); 
+   background-clip: text;
+  color: transparent;
+}
+.dragao {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  background-clip: text;
+  color: transparent;
+}
+.caveira {
+  background: rgb(238,174,202);
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+   background-clip: text;
+  color: transparent;
+}
+.replay{
+  background: #1E9600;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF0000, #FFF200, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF0000, #FFF200, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+   background-clip: text;
+  color: transparent;
+
+}
+
