@@ -1,9 +1,14 @@
 
-import logo from './logo.svg';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react';
 import "./App.scss"
+
+const indiceParaClasse = ["porta", "arma", "dragao", "caveira", "replay"]
+  
+
+
+
 
 
 function geraIcone(indice) {
@@ -22,19 +27,37 @@ function geraIcone(indice) {
   }
 }
 
+
+function geraTexto(indice) {
+  switch (indice) {
+    case 0:
+      return "Entre no Calabouço"
+    case 1:
+      return "Pegue a Arma ";
+    case 2:
+      return "Mate o Dragão";
+    case 3:
+      return "Dragão Assassinado !";
+    case 4:
+      return "Jogar de Novo";
+
+  }
+}
+
 let iconeAtual = 0
 
 function IconePrincipal() {
 
   const [contadorDeCliques, setaIndiceIcone] = useState(iconeAtual);
-  if (contadorDeCliques == 5 ){
+  if (contadorDeCliques == 5) {
     setaIndiceIcone(0)
   }
   return (
     <div>
-
+      <h1 className={indiceParaClasse[contadorDeCliques]}>{geraTexto(contadorDeCliques)}</h1>
       <a href='#' onClick={() => setaIndiceIcone(contadorDeCliques + 1)}>
         {geraIcone(contadorDeCliques)}
+        {console.log(indiceParaClasse[contadorDeCliques])}
       </a>
     </div>
   );
@@ -43,8 +66,8 @@ function IconePrincipal() {
 function App() {
   return (
     <>
-      <div className='tudo pt-5 fundoFundo '>
-        <div className='shadow-lg border  border-5 border-dark rounded-circle container text-center containerCentral fundoMeio d-flex align-items-center justify-content-center'>
+      <div className='tudo fundoFundo '>
+        <div className='glow shadow-lg border  border-5 border-dark rounded-circle container text-center containerCentral fundoMeio d-flex align-items-center justify-content-center'>
           <div className='row'>
             <div className='col'>
               {IconePrincipal()}
