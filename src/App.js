@@ -43,8 +43,8 @@ function IconePrincipal() {
 function App() {
   return (
     <>
-      <div className='tudo pt-5 bg-secondary bg-gradient '>
-        <div className='shadow-lg border  border-5 border-dark rounded-circle container text-center containerCentral bg-dark bg-gradient d-flex align-items-center justify-content-center'>
+      <div className='tudo pt-5 fundoFundo '>
+        <div className='shadow-lg border  border-5 border-dark rounded-circle container text-center containerCentral fundoMeio d-flex align-items-center justify-content-center'>
           <div className='row'>
             <div className='col'>
               {IconePrincipal()}
