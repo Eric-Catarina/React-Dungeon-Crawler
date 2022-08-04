@@ -9,25 +9,22 @@ export default function Icone(properties) {
   const indiceParaClasse = ["porta", "arma", "dragao", "caveira", "replay"]
 
 
-
-
-
-
   function RetornaIcone(indice) {
     switch (indice) {
       case 0:
-        return <h1><i class="fa-solid fa-dungeon fa-10x porta"></i></h1>;
+        return <h1><i className="fa-solid fa-dungeon fa-10x porta"></i></h1>;
       case 1:
-        return <h1><i class="fa-solid fa-khanda fa-10x arma"></i></h1>;
+        return <h1><i className="fa-solid fa-khanda fa-10x arma"></i></h1>;
       case 2:
-        return <h1><i class="fa-solid fa-dragon fa-10x dragao"></i></h1>;
+        return <h1><i className="fa-solid fa-dragon fa-10x dragao"></i></h1>;
       case 3:
-        return <h1><i class="fa-solid fa-skull-crossbones fa-10x caveira"></i></h1>;
+        return <h1><i className="fa-solid fa-skull-crossbones fa-10x caveira"></i></h1>;
       case 4:
-        return <h1><i class="fa-solid fa-arrow-rotate-left fa-10x replay"></i></h1>;
+        return <h1><i className="fa-solid fa-arrow-rotate-left fa-10x replay"></i></h1>;
 
     }
   }
+  
 
 
   function geraTexto(indice) {
@@ -53,7 +50,7 @@ export default function Icone(properties) {
     if (contadorDeCliques == 5) {
       setaIndiceIcone(0)
     }
-    const tocaSom = (indice) => {
+    const tocaSom = (contadorDeCliques) => {
 
       let vetorAudios = []
       let vetorAudiosSfx = [audioPortaSfx, audioArmaSfx, audioDragonSfx, audioDeathSfx, audioWinSfx]
@@ -61,26 +58,36 @@ export default function Icone(properties) {
       for (let audioAtual of vetorAudiosSfx) {
         vetorAudios.push(new Audio(audioAtual))
       }
-      vetorAudios[indice].play()
+      vetorAudios[contadorDeCliques + 1].play()
+      
     }
 
     function TocaSomETrocaIcone(contadorDeCliques) {
       setaIndiceIcone(contadorDeCliques + 1)
+
       tocaSom(contadorDeCliques)
+
+
+    }
+    function TocaSomPortaSeIndiceZero(contadorDeCliques){
+      if (contadorDeCliques ==0 ){
+        let audioPorta = new Audio(audioPortaSfx)
+        audioPorta.play()
+      }
     }
     
 
-
-    
     return (
       <div>
+
         <h1 className={indiceParaClasse[contadorDeCliques]}>
           {geraTexto(contadorDeCliques)}
+          {TocaSomPortaSeIndiceZero(contadorDeCliques)}
         </h1>
-
+        
         <a href='#' onClick={() => TocaSomETrocaIcone(contadorDeCliques)}>
           {RetornaIcone(contadorDeCliques)}
-          {console.log(indiceParaClasse[contadorDeCliques])}
+          {console.log(contadorDeCliques)}
         </a>
       </div>
     );
